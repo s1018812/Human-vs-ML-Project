@@ -5,17 +5,33 @@ import pandas as pd
 # import matplotlib.pyplot as plt
 # import os
 
-# Copied precisely from the UCI Machine Learning Repository package documentation
+def load_mushroom_data(): 
 
-# fetch dataset 
-mushroom = fetch_ucirepo(id=73) 
+    # Copied precisely from the UCI Machine Learning Repository package documentation
 
-# data (as pandas dataframes) 
-X = mushroom.data.features 
-y = mushroom.data.targets 
+    # fetch dataset 
+    mushroom = fetch_ucirepo(id=73) 
 
-# metadata 
-print(mushroom.metadata) 
+    # data (as pandas dataframes) 
+    X = mushroom.data.features 
+    y = mushroom.data.targets 
 
-# variable information 
-print(mushroom.variables) 
+    # metadata 
+    print(mushroom.metadata) 
+
+    # variable information 
+    print(mushroom.variables) 
+
+    # ---------------------------------------------------------------------
+
+    feature_names = mushroom.variables[mushroom.variables['role'] == 'Feature']['name'].tolist()
+    target_name = mushroom.variables[mushroom.variables['role'] == 'Target']['name'].values[0]
+
+    df = pd.DataFrame(mushroom.data.features, columns=feature_names)
+    df[target_name] = mushroom.data.targets
+
+    # I printed here to confirm that I was importing data correctly.
+    # print(df.head())
+
+    return df, target_name
+# load_mushroom_data()
