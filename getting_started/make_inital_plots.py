@@ -10,7 +10,7 @@ def make_plot(factor_1, factor_2):
     
     df, target_name = load_mushroom_data()
 
-    os.makedirs("plots", exist_ok=True)
+    os.makedirs("getting_started/plots", exist_ok=True)
 
     plt.figure(figsize=(8, 6))
     sns.scatterplot(
@@ -22,14 +22,14 @@ def make_plot(factor_1, factor_2):
         s=90
     )
 
-plt.title(f'Mushroom Species: {factor_1_label} vs {factor_2_label}')
-plt.xlabel(f'{factor_1_label}')
-plt.ylabel(f'{factor_2_label}')
-plt.legend(title='Mushroom Species')
-plt.grid(True)
-plt.savefig(f'example/e_getting_started/plots/{factor_1_label}_v_{factor_2_label}.png', dpi=150)
-plt.close()
+    plt.title(f'Mushroom Species: {factor_1_label} vs {factor_2_label}')
+    plt.xlabel(f'{factor_1_label}')
+    plt.ylabel(f'{factor_2_label}')
+    plt.legend(title='Mushroom Species')
+    plt.grid(True)
+    plt.savefig(f'getting_started/plots/{factor_1_label}_v_{factor_2_label}.png', dpi=150)
+    plt.close()
 
 make_plot('cap-color', 'poisonous')
-# make_plot('sepal width', 'petal length')
-# make_plot('sepal width', 'petal width')
+make_plot('odor', 'poisonous')
+make_plot('habitat', 'poisonous')
