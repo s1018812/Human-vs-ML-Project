@@ -7,7 +7,7 @@ import seaborn as sns
 def make_plot(factor_1, factor_2):
     factor_1_label = factor_1.replace('_', ' ')
     factor_2_label = factor_2.replace('_', ' ')
-    
+
     df, target_name = load_mushroom_data()
 
     os.makedirs("getting_started/plots", exist_ok=True)
@@ -30,6 +30,6 @@ def make_plot(factor_1, factor_2):
     plt.savefig(f'getting_started/plots/{factor_1_label}_v_{factor_2_label}.png', dpi=150)
     plt.close()
 
-make_plot('cap-color', 'poisonous')
-make_plot('odor', 'poisonous')
-make_plot('habitat', 'poisonous')
+make_plot('odor', 'habitat')
+make_plot('odor', 'cap-color')
+make_plot('bruises', 'odor')
