@@ -1,11 +1,11 @@
 def human_classify(odor): 
     if odor == 'a':  
-        return 'edible' 
+        return 'e' 
     elif odor == 'l': 
-        return 'edible' 
+        return 'e' 
     elif odor == 'n': 
-        return 'edible' 
+        return 'e' 
     else: 
-        return 'poisonous'
+        return 'p'
 
-print(human_classify('a'))  # Should return 'edible'
+# print(human_classify('a'))  # Should return 'edible'

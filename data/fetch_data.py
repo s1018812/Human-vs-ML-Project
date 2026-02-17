@@ -17,10 +17,10 @@ def load_mushroom_data():
     y = mushroom.data.targets 
 
     # metadata 
-    print(mushroom.metadata) 
+    # print(mushroom.metadata) 
 
-    # variable information 
-    print(mushroom.variables) 
+    # # variable information 
+    # print(mushroom.variables) 
 
     # ---------------------------------------------------------------------
 
@@ -31,7 +31,6 @@ def load_mushroom_data():
     df[target_name] = mushroom.data.targets
 
     # I printed here to confirm that I was importing data correctly.
-    # print(df.head())
+    # print(df.head(20))
 
     return df, target_name
-# load_mushroom_data()
