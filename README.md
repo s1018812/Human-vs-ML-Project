@@ -41,38 +41,49 @@ Predicted Attribute: Classify if a mushroom is edible or poisionous
 
 
 ## Getting Started
-<img src="/getting_started/plots/bruises_v_odor.png>" alt="X vs Y - Mushroom Dataset" width="400">
+<img src="/workspaces/Human-vs-ML-Project/getting_started/plots/bruises_v_odor.png" alt="X vs Y – Mushroom Dataset" width="400">
+<img src="/workspaces/Human-vs-ML-Project/getting_started/plots/odor_v_cap-color.png" alt="X vs Y – Mushroom Dataset" width="400">
+<img src="/workspaces/Human-vs-ML-Project/getting_started/plots/odor_v_habitat.png" alt="X vs Y – Mushroom Dataset" width="400">
 
 ## Human Algorithm
 
 ### Pseudo-Code
 ```text
-Write your human decision rules here.
+Out of the variables analyzed, odor had the clearest diffrence to classify a mushroom as posionous or edible. The human-algorithm is: 
+
+    IF odor == almond:  
+        Predict edible 
+    ELIF odor == anise: 
+        Predict edible 
+    ELIF odor == none: 
+        Predict edible
+    ELSE: 
+        Predict posionous
+
 ```
 
-When examining the data and visualizations, we focused on the features ___ and ___ because ___.
+When examining the data and visualizations, I focused on the feature odor only because of the ones analyzed, it had the clearest distinction between poisonous and edible mushroom.
 
-The plots/tables suggested a possible threshold for ___, and we considered values above or below this point to see how they might relate to ___.
+The plots/tables suggested values for edible odors to be almond, anise and none. I considered values other than these to see how they might relate to a mushroom being edible.
 
-From the summary tables and visualizations, it appeared that ___ could influence classification, which led us to ___ in our decision rules.
+From the summary tables and visualizations, it appeared that odor could influence whether a mushroom was poisionous, which led us to using this factor in our decision rules.
 
 ### Confusion Matrix
 
-Accuracy: ?
+Accuracy: 98.69%
 
-| Actual \ Predicted | Class 1 | Class 2 | Class 3 |
-|-------------------|---------|---------|---------|
-| **Class 1**       |         |         |         |
-| **Class 2**       |         |         |         |
-| **Class 3**       |         |         |         |
+| Actual \ Predicted| Posionous| Edible |
+|-------------------|---------|---------|
+| **Posionous**      |    1143     |    32    |
+| **Edible**         |    0     |    1263   |
 
-One example where our algorithm worked well is when the inputs were ___, leading to a correct prediction of ___ because ___.
+One example where our algorithm worked well is when the inputs were spicy or pungent, leading to a correct prediction of posionous because all of the mushrooms in the data set with that odor are poisionous.
 
-An example where the algorithm did not perform as expected is when the inputs were ___, resulting in a prediction of ___ instead of ___, which may have happened because ___.
+An example where the algorithm did not perform as expected is when there was no odor, resulting in a prediction of poisionous instead of edible, which may have happened because no odor isn't as clear between posionous and edible as the other inputs.
 
-These examples of success and failure highlight patterns in the data or limitations in our rules, such as ___.
+These examples of success and failure highlight patterns in the data or limitations in our rules, such as the fact that there are some odors that didn't perfectly fit into the categories of posionous or edible. The exceptions to the rule caused the failures in the human model.
 
-<img width="315" height="334" alt="image" src="https://github.com/user-attachments/assets/23ee1e49-da76-47c2-97b8-c8fbcbef179c" />
+<img width="400" height="334" alt="image" src="/workspaces/Human-vs-ML-Project/human_algorithm/plots/human_model_training_results.png" />
 
 ## Machine Learning Model
 

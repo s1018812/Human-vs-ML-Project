@@ -34,3 +34,5 @@ def load_mushroom_data():
     # print(df.head(20))
 
     return df, target_name
+
+# load_mushroom_data()
