@@ -18,24 +18,30 @@ You may work alone or with a partner. You may choose to work with the provided P
 ---
 
 **Team Members:**  
-- Name 1  
-- Name 2 (if applicable)  
+Harshita Nagar
 
 **Dataset Used:**  
-(e.g. Penguins, Iris, Titanic, etc.)
+Mushroom Dataset
 
 **Source:**  
-(UCI / Kaggle / Provided dataset)
+[UCI Mushroom Data](https://archive.ics.uci.edu/dataset/73/mushroom)
+[Import ReadMe for Data](https://github.com/uci-ml-repo/ucimlrepo)
 
 **Target Variable (What we are predicting):**  
-(e.g. species, survival, diagnosis)
+Predicted Attribute: Classify if a mushroom is edible or poisionous 
 
 **Features Used:**  
-- Feature 1  
-- Feature 2  
-- Feature 3
+- Bruises
+- Odor
+- Cap-color
+- Habitat
 
 **[Video Review](https://)**
+
+
+
+## Getting Started
+<img src="/getting_started/plots/bruises_v_odor.png>" alt="X vs Y - Mushroom Dataset" width="400">
 
 ## Human Algorithm
 
