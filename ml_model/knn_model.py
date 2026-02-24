@@ -12,6 +12,9 @@ df, target_name = load_mushroom_data()
 X = df[['cap-color', 'odor']]
 y = df[target_name]
 
+# Encode categorical features using one-hot encoding
+X = pd.get_dummies(X)
+
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -21,7 +24,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # I selected k=1 for the KNN classifier.
-k = 1
+k = 3
 knn = KNeighborsClassifier(n_neighbors=k)
 knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)
@@ -42,14 +45,15 @@ accuracy_knn = (y_pred == y_test).mean()
 print(f"KNN classifier accuracy (k={k}): {accuracy_knn:.2%}\n")
 print(conf_matrix_knn)
 
-# Add a 'correct' column for the visualization on test data
-test_df = X_test.copy()
+# Reconstruct plotting DataFrames from the original categorical columns
+# Use the indices from the encoded splits to select matching rows from `df`.
+test_df = df.loc[X_test.index, ['cap-color', 'odor']].copy()
 test_df[target_name] = y_test
 test_df['KNN_prediction'] = y_pred
 test_df['correct'] = test_df['KNN_prediction'] == test_df[target_name]
 
-# Add a 'correct' column for the visualization on training data
-train_df = X_train.copy()
+# Reconstruct training plotting DataFrame
+train_df = df.loc[X_train.index, ['cap-color', 'odor']].copy()
 train_df[target_name] = y_train
 train_df['KNN_prediction'] = y_train_pred
 train_df['correct'] = train_df['KNN_prediction'] == train_df[target_name]

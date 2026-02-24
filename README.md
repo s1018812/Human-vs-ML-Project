@@ -87,26 +87,25 @@ These examples of success and failure highlight patterns in the data or limitati
 
 ## Machine Learning Model
 
-We chose a value of k = ___ after comparing model performance across different values of k and observing that ___.
+I chose a value of k = 3 after comparing model performance across different values of k and observing that 3 was giving the most accurate results. If I increased the k number too much, the accuracy rates actually started to decrease. 
 
-When analyzing the outputs and metrics, we noticed that changing k affected ___, which influenced our final choice.
+When analyzing the outputs and metrics, we noticed that changing k affected from 3-10 didn't change our results at all, which influenced our final choice as 3 was the first number where the best accuracy rate occured. If we increased the k-value dramatically (ex. k = 50) the accuracy actually went down
 
-Based on the results shown in the tables or visualizations, k = ___ best matched our goals for model performance because ___.
+Based on the results shown in the tables or visualizations, k = 3 best matched our goals for model performance because it's able to capture local patterns without breaking because of a single outlier.
 
 ### Confusion Matrix
 
-Accuracy: ?
+Accuracy: 98.97
 
-| Actual \ Predicted | Class 1 | Class 2 | Class 3 |
-|-------------------|---------|---------|---------|
-| **Class 1**       |         |         |         |
-| **Class 2**       |         |         |         |
-| **Class 3**       |         |         |         |
+| Actual \ Predicted| Posionous| Edible |
+|-------------------|---------|---------|
+| **Posionous**     |  1150   |    25   |
+| **Edible**        |    0    |   1263  |
 
-The table/visualization shows a clear pattern where the model predicts ___ when ___, indicating a strong relationship between these features.
+The table/visualization shows a clear pattern where the model predicts whether a mushroom is posionous or edible when cap color and odor are considered, indicating a strong relationship between these features.
 
-The confusion matrix reveals that the model most often confuses ___ with ___, suggesting these classes have similar feature values.
+The confusion matrix reveals that the model most often predicts posionous mushrooms as edible, suggesting these classes have similar feature values.
 
-Compared to the human algorithm, the KNN model shows different behavior when ___, as seen in the ___ visualization.
+Compared to the human algorithm, the KNN model shows different behavior when utilizing the KNN method, as seen in the visualization below.
 
-<img width="315" height="334" alt="image" src="https://github.com/user-attachments/assets/199ae59d-3470-40c6-9669-60e62b211619" />
+<img width="400" height="334" alt="image" src="/workspaces/Human-vs-ML-Project/ml_model/plots/knn_model_test_results.png" />
